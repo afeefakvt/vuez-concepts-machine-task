@@ -8,6 +8,7 @@ import Register3 from "./pages/Register3"
 import Summary from "./pages/Summary"
 import DiscountedSummary from "./pages/DiscountedSummary"
 import SuccessPage from "./pages/Success"
+import Category from "./pages/Category"
 
 function App() {
  
@@ -22,6 +23,7 @@ function App() {
                 <Routes>
                 <Route path="/" element={<Ticket/>}/>
                 <Route path="/register" element={<Register/>}/>
+                <Route path="/category" element={<Category/>}/>
                 <Route path="/register2" element={<Register2/>}/>
                 <Route path="/register3" element={<Register3/>}/>
                 <Route path="/promocode" element={<Summary/>}/>

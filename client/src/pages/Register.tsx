@@ -7,18 +7,16 @@ import nav from '../assets/nav.png'
 const Register = () => {
   return (
    <div
-  className="min-h-screen flex flex-col bg-contain bg-no-repeat bg-center"
+  className="min-h-screen flex flex-col "
   style={{ backgroundImage: `url(${bgGrid})` }}
 >
   <Stepper currentStep={1} />
 
   <div className="flex flex-col md:flex-row justify-center md:items-start gap-6 px-4 py-6">
-    {/* Left: Form */}
     <div className="w-full md:w-2/3 max-w-3xl">
   <RegistrationForm />
 </div>
 
-    {/* Right: Card Preview */}
     <div className="w-full md:w-1/3 bg-white rounded shadow relative">
       <img src={nav} className="absolute top-0 left-0 w-full h-[80px] object-cover rounded-t" />
       <img src={logo2} className="absolute top-2 left-2 h-12" />

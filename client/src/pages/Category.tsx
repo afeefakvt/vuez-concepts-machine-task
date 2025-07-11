@@ -4,13 +4,13 @@ import bgGrid from '../assets/bg.png';
 import logo2 from '../assets/logo2.png';
 import nav from '../assets/nav.png'
 
-const Register2 = () => {
+const Category = () => {
   return (
    <div
   className="min-h-screen flex flex-col "
   style={{ backgroundImage: `url(${bgGrid})` }}
 >
-  <Stepper currentStep={2} />
+  <Stepper currentStep={1} />
 
   <div className="flex flex-col md:flex-row justify-center md:items-start gap-6 px-4 py-6">
     <div className="w-full md:w-2/3 max-w-3xl">
@@ -35,5 +35,5 @@ const Register2 = () => {
   );
 };
 
-export default Register2;
+export default Category;
 

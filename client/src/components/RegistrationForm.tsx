@@ -9,15 +9,13 @@ const RegistrationForm = () => {
 
   return (
     <div className="w-full bg-white p-6 rounded shadow-md">
-      <h2 className="text-lg font-bold text-green-800 mb-4">
-        Registration Information 1
-      </h2>
-      <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {/* Name */}
+      <div className="bg-gradient-to-r from-[#299D3F] to-[#123F22] text-white text-lg font-semibold px-4 py-3 rounded-t-xl">
+        Registration Summary
+      </div>
+      <form className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
         <input className="border p-2 rounded" placeholder="First name *" />
         <input className="border p-2 rounded" placeholder="Last name *" />
 
-        {/* Country & Region */}
         <select className="border p-2 rounded">
           <option>Please Select</option>
           <option>Nigeria</option>
@@ -28,14 +26,12 @@ const RegistrationForm = () => {
           <option>Please Select</option>
         </select>
 
-        {/* Email */}
         <input className="border p-2 rounded" placeholder="Email address *" />
         <input
           className="border p-2 rounded"
           placeholder="Confirm Email address *"
         />
 
-        {/* Nationality & Mobile */}
         <select className="border p-2 rounded">
           <option>Nationality</option>
         </select>
@@ -51,11 +47,9 @@ const RegistrationForm = () => {
           />
         </div>
 
-        {/* Company & Job */}
         <input className="border p-2 rounded" placeholder="Company name *" />
         <input className="border p-2 rounded" placeholder="Job title *" />
 
-        {/* Company type & Industry */}
         <select className="border p-2 rounded">
           <option>Company type *</option>
         </select>
@@ -63,17 +57,54 @@ const RegistrationForm = () => {
           <option>Industry *</option>
         </select>
 
-        {/* Solutions / Products button */}
-        <div className="md:col-span-2 text-right">
+        <div className="md:col-span-2 text-right font-semibold">
           <button
             type="button"
-            className="bg-red-900 text-white px-4 py-2 text-xs rounded"
+            className="bg-gradient-to-r from-[#9F1413] to-[#000000] text-white px-4 py-2 text-xs rounded font-semibold hover:opacity-90"
           >
             SELECT SOLUTIONS/PRODUCTS
           </button>
         </div>
 
-        {/* Workshops */}
+        {location.pathname === "/category" && (
+          <div className="md:col-span-2">
+            <div className="mt-4">
+              <p className="font-semibold text-sm mb-1">Main Categories</p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Artificial Intelligence & Robotics",
+                  "Cloud Computing",
+                  "Cybersecurity",
+                ].map((cat, i) => (
+                  <span
+                    key={i}
+                    className="bg-[#4B2953] text-white text-sm px-3 py-1 rounded-full"
+                  >
+                    {cat}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-4">
+              <p className="font-semibold text-sm mb-1">Sub Categories</p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Edge Computing",
+                  "Cloud Computing",
+                  "Cognitive Computing",
+                ].map((sub, i) => (
+                  <span
+                    key={i}
+                    className="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full"
+                  >
+                    {sub}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
         <div className="md:col-span-2">
           <p className="text-sm font-semibold mb-2">
             Select Workshop (Maximum 6 can Select)
@@ -101,8 +132,6 @@ const RegistrationForm = () => {
           </div>
         </div>
 
-        {/* Submit Button */}
-        {/* Submit Buttons */}
         <div className="md:col-span-2 flex justify-center gap-x-4 mt-6">
           {showPrevious && (
             <button
@@ -123,10 +152,12 @@ const RegistrationForm = () => {
           <button
             onClick={() => {
               if (location.pathname === "/register") {
+                navigate("/category");
+              } else if (location.pathname === "/category") {
                 navigate("/register2");
               } else if (location.pathname === "/register2") {
                 navigate("/register3");
-              } else {
+              }else {
                 navigate("/promocode");
               }
             }}

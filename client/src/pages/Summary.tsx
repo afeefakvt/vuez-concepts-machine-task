@@ -3,7 +3,7 @@ import bgImage from "../assets/bg.png";
 import { useNavigate } from "react-router-dom";
 
 const Summary = () => {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col min-h-screen">
       <div
@@ -14,7 +14,7 @@ const Summary = () => {
           <Stepper currentStep={5} />
 
           <div className="bg-white rounded-xl shadow-lg p-6 mt-6">
-            <div className="bg-green-700 text-white text-lg font-semibold rounded-t-md px-4 py-2">
+            <div className="bg-gradient-to-r from-[#299D3F] to-[#123F22] text-white text-lg font-semibold px-4 py-3 rounded-t-xl">
               Registration Summary
             </div>
             <div className="space-y-4 text-gray-800">
@@ -30,24 +30,17 @@ const Summary = () => {
                 <span>EUR 50.40 SUBJECT TO APPROVAL Incl. 19%</span>
               </div>
 
-              {/* Promo Code */}
-              <div className="mt-6">
-                <label className="block text-green-700 font-medium mb-1">
-                  Have a promo code?
-                </label>
-                <div className="flex">
-                  <input
-                    type="text"
-                    placeholder="Enter Promo code"
-                    className="flex-1 px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-green-500"
-                  />
-                  <button className="px-4 py-2 bg-red-600 text-white rounded-r-md hover:bg-red-700">
-                    APPLY
-                  </button>
-                </div>
+              <div className="border border-gray-200 p-4 rounded-md bg-gray-50 flex items-center gap-2">
+                <input
+                  type="text"
+                  placeholder="Enter Promo Code"
+                  className="flex-1 border border-gray-300 px-3 py-2 rounded-md text-sm bg-gray-100"
+                />
+                <button className="bg-gradient-to-r from-[#9F1413] to-[#000000] text-white px-5 py-2 rounded-md text-sm font-semibold">
+                  APPLY
+                </button>
               </div>
 
-              {/* Terms and Conditions */}
               <div className="mt-6 space-y-4 text-sm text-gray-600">
                 <label className="flex items-start gap-2">
                   <input type="checkbox" className="mt-1" />
@@ -75,18 +68,24 @@ const Summary = () => {
                 </label>
               </div>
 
-              {/* Total */}
-              <div className="mt-6 text-right font-semibold text-lg">
-                Total:{" "}
-                <span className="text-gray-900">EUR 300 Incl. 19% VAT</span>
+              <div className="mt-6 text-right font-bold text-lg">
+                Total: <span className="text-gray-900">EUR 300</span>
+                <span className="text-sm text-gray-600 font-normal">
+                  Incl. 19% VAT
+                </span>
               </div>
 
-              {/* Buttons */}
               <div className="flex justify-between mt-6">
-                <button className="bg-purple-800 text-white px-6 py-2 rounded hover:bg-purple-900">
+                <button
+                  className="bg-gradient-to-r from-[#5C2F66] to-[#25102C] text-white px-6 py-2 rounded hover:opacity-90 font-semibold"
+                  onClick={() => navigate("/register3")}
+                >
                   PREVIOUS
                 </button>
-                <button className="bg-green-700 text-white px-6 py-2 rounded hover:bg-green-800" onClick={()=>navigate('/discount')}>
+                <button
+                  className="bg-gradient-to-r from-[#27963D] to-[#134323] text-white px-6 py-2 rounded hover:opacity-90 font-semibold"
+                  onClick={() => navigate("/discount")}
+                >
                   NEXT
                 </button>
               </div>
