@@ -18,7 +18,7 @@ const Summary = () => {
               Registration Summary
             </div>
             <div className="space-y-4 text-gray-800">
-              <div className="flex justify-between">
+              <div className="flex justify-between mt-2">
                 <span className="font-semibold">PREMIUM TICKET x 2</span>
                 <span>EUR 40.19</span>
               </div>
